@@ -21,10 +21,10 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       ""      # Your name
-  title:        ""      # Project title
+  author:       "Juan Cabrera"      # Your name
+  title:        "3-bit two's complement adder"      # Project title
   language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  ""      # Short description of what your project does
+  description:  "Adds two 3-bit numbers"      # Short description of what your project does
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
@@ -32,28 +32,31 @@ documentation:
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Explain how to test your project
+      Set inputs 2, 3, 4 and 5, 6, 7 to the numbers you want to add together, if input pin 1 is NOT set, you'll get
+      the result of the addition in output pins 5, 6, 7; output pin 4 will be the carry flag and output pint 3 will
+      be the zero flag. If input pin 1 IS set, then the number in pins 5, 6, 7 will be negated (i.e: NOT B + 1) before
+      the addition occurs.
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
     - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+    - Neg (Negates the operand B if set)
+    - A2 (MSB)
+    - A1
+    - A0 (LSB)
+    - B2 (MSB)
+    - B1
+    - B0 (LSB)
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
     - segment a
     - segment b
     - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - Zero Flag
+    - Carry Flag
+    - Result Bit 2 (MSB)
+    - Result Bit 1
+    - Result Bit 0 (LSB)
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
     - none
